@@ -20,13 +20,19 @@ ActionChains(driver).move_to_element(elem).click(elem).perform()
 
 # elem = driver.find_elements_by_xpath("//a[text()='All releases']")[0]
 # elem.click()
-driver.implicitly_wait(10)
+driver.implicitly_wait(5)
 
-elem = driver.find_elements_by_css_selector(
-    "a[href='/downloads/release/python-374/']")[0]
-print(elem)
-print(elem.text)
-ActionChains(driver).move_to_element(elem).click(elem).perform()
+# elem = driver.find_elements_by_css_selector(
+#     "a[href='/downloads/release/python-374/']")[0]
+# print(elem)
+# print(elem.text)
+# ActionChains(driver).move_to_element(elem).click(elem).perform()
+elems = driver.find_elements_by_xpath("//a[contains(., 'Download Python')]")
+for elem in elems:
+    print("-------")
+    print(elem.text)
+    # print(elem.tag)
+
 # elem.click()
 # body = driver.find_element_by_tag_name("body")
 # body.send_keys(Keys.CONTROL + 't')
