@@ -28,7 +28,7 @@ driver.implicitly_wait(5)
 # print(elem.text)
 # ActionChains(driver).move_to_element(elem).click(elem).perform()
 elems = driver.find_elements_by_xpath(
-    "//a[contains(., 'Download Python')]")
+    "//div[@class='download-os-windows']//a[contains(., 'Download Python')]")
 for elem in elems:
     print("-------")
     print(elem.text)
